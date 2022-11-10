@@ -2,12 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import "./App.css";
+import axios from 'axios';
 
 function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-   
+    const pruebas = async() =>{
+      const res = await axios.get('https://frothend-crayolito.herokuapp.com/api')
+      setData(res.data.message)
+    }
+    pruebas()
   }, []);
 
   return (
