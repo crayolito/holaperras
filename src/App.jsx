@@ -10,6 +10,7 @@ function App() {
   React.useEffect(() => {
     const pruebas = async() =>{
       const res = await axios.get('https://frothend-crayolito.herokuapp.com/api')
+      console.log(res);
       setData(res.data.message)
     }
     pruebas()
